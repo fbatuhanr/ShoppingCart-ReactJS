@@ -1,4 +1,6 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,30 +8,20 @@ import {
   Link
 } from "react-router-dom";
 
+import Navigation from "./components/navigation";
+
+import Shop from "./pages/shop/shop";
+import Cart from "./pages/cart/cart";
+
 function App() {
   return (
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                  <Link to="/cart">Cart</Link>
-              </li>
-            </ul>
-          </nav>
+          <Navigation/>
 
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
           <Routes>
-            <Route path="/">
-
-            </Route>
-            <Route path="/cart">
-
-            </Route>
+            <Route path="/" element={<Shop />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </div>
       </Router>
