@@ -6,26 +6,30 @@ import product4 from "./assets/sports.jpg";
 export const data = [
     {
         id: 1,
+        productImage: product1,
         productName: "Macbook Pro",
-        price: 999.0,
-        productImage: product1
+        productDescription: "M2 chip & 13-inch",
+        ProductPrice: 1299
     },
     {
         id: 2,
+        productImage: product2,
         productName: "Memory Foam Mattress",
-        price: 999.0,
-        productImage: product2
+        productDescription: "Special mattress",
+        ProductPrice: 348.5
     },
     {
         id: 3,
+        productImage: product3,
         productName: "Daily Repair Face Gel Cream for Dry Skin",
-        price: 999.0,
-        productImage: product3
+        productDescription: "Face gel",
+        ProductPrice: 29.5
     },
     {
         id: 4,
+        productImage: product4,
         productName: "Workout Dumbbell",
-        price: 999.0,
-        productImage: product4
+        productDescription: "Colorful",
+        ProductPrice: 99.9
     },
 ]
