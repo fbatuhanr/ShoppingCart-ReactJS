@@ -16,7 +16,7 @@ import Cart from "./pages/cart/cart";
 function App() {
   return (
       <Router>
-        <div>
+        <div id="shop">
           <Navigation/>
 
           <Routes>
