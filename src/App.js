@@ -13,18 +13,21 @@ import Navigation from "./components/navigation";
 import Shop from "./pages/shop/shop";
 import Cart from "./pages/cart/cart";
 
+import { ShopContextProvider } from "./context/shop-context";
+
 function App() {
   return (
-      <Router>
-        <div id="shop">
-          <Navigation/>
-
-          <Routes>
-            <Route path="/" element={<Shop />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
-        </div>
-      </Router>
+      <div id="shop">
+          <ShopContextProvider>
+          <Router>
+              <Navigation/>
+              <Routes>
+                <Route path="/" element={<Shop />} />
+                <Route path="/cart" element={<Cart />} />
+              </Routes>
+          </Router>
+          </ShopContextProvider>
+      </div>
   );
 }
 

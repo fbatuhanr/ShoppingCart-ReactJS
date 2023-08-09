@@ -6,16 +6,16 @@ import {GiHealthPotion} from "react-icons/gi";
 
 const Categories = () => {
     return (
-        <div className="mt-4">
+        <div className="mt-4 mb-4">
             <Row>
                 <Col>
-                    <h4 className="text-center m-0">SHOP BY CATEGORY</h4>
+                    <h4 className="text-center">SHOP BY CATEGORY</h4>
                 </Col>
             </Row>
             <Row>
-                <Col xs={{span:8, offset:2}}>
-                    <Navbar className="row gy-4">
-                        <Col xs={3}>
+                <Col xs={{span:12, offset:0}} md={{span:8, offset:2}} >
+                    <Row>
+                        <Col xs={6} md={3}>
                             <a href="#" className="text-decoration-none text-center text-dark">
                                 <figure className="mb-2">
                                     <img src="https://raw.githubusercontent.com/fbatuhanr/ShoppingCart-ReactJS/f95180afe5932e3da9aa1cdfe0c2dc64f9384794/src/assets/categories/electronics.jpeg" alt="category"
@@ -28,7 +28,7 @@ const Categories = () => {
                                 </div>
                             </a>
                         </Col>
-                        <Col xs={3}>
+                        <Col xs={6} md={3}>
                             <a href="#" className="text-decoration-none text-center text-dark">
                                 <figure className="mb-2">
                                     <img src="https://raw.githubusercontent.com/fbatuhanr/ShoppingCart-ReactJS/f95180afe5932e3da9aa1cdfe0c2dc64f9384794/src/assets/categories/fashion.jpeg" alt="category"
@@ -41,7 +41,7 @@ const Categories = () => {
                                 </div>
                             </a>
                         </Col>
-                        <Col xs={3}>
+                        <Col xs={6} md={3}>
                             <a href="#" className="text-decoration-none text-center text-dark">
                                 <figure className="mb-2">
                                     <img src="https://raw.githubusercontent.com/fbatuhanr/ShoppingCart-ReactJS/f95180afe5932e3da9aa1cdfe0c2dc64f9384794/src/assets/categories/bags.jpeg" alt="category"
@@ -54,7 +54,7 @@ const Categories = () => {
                                 </div>
                             </a>
                         </Col>
-                        <Col xs={3}>
+                        <Col xs={6} md={3}>
                             <a href="#" className="text-decoration-none text-center text-dark">
                                 <figure className="mb-2">
                                     <img src="https://raw.githubusercontent.com/fbatuhanr/ShoppingCart-ReactJS/f95180afe5932e3da9aa1cdfe0c2dc64f9384794/src/assets/categories/sunglasses.jpeg" alt="category"
@@ -67,7 +67,7 @@ const Categories = () => {
                                 </div>
                             </a>
                         </Col>
-                    </Navbar>
+                    </Row>
                 </Col>
             </Row>
         </div>
