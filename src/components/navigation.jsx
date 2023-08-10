@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import {Link} from "react-router-dom";
 
@@ -8,13 +8,18 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import {BsCartCheck, BsCartDash, BsShop} from "react-icons/bs";
+import {ShopContext} from "../context/shop-context";
 
 
 const Navigation = () => {
+
+    const { getCartItemCount } = useContext(ShopContext);
+    const cartItemCount = getCartItemCount();
+
     return (
         <Navbar expand="lg" className="bg-body-tertiary">
             <Container>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand as={Link} to="/">
                     <BsShop className="align-middle"/>
                     <span className="ms-1 align-middle">Shopping Cart</span>
                 </Navbar.Brand>
@@ -38,8 +43,12 @@ const Navigation = () => {
                 <Navbar.Collapse>
                     <Nav className="ms-auto me-0">
                         <Nav.Link as={Link} to="/cart">
-                            <BsCartDash className="align-middle"/>
-                            <span className="ms-1 align-middle">Cart</span>
+                            {
+                                cartItemCount > 0
+                                ? <BsCartCheck className="align-middle" />
+                                    : <BsCartDash className="align-middle" />
+                            }
+                            <span className="ms-1 align-middle">Cart {cartItemCount > 0 && ` (${cartItemCount})`}</span>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

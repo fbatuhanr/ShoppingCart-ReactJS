@@ -1,5 +1,4 @@
 import React, {createContext, useState} from 'react';
-import product1 from "../assets/computers.png";
 import {data} from "../data";
 
 export const ShopContext = createContext(null);
@@ -16,11 +15,40 @@ export const ShopContextProvider = (props) => {
 
     const [cartItems, setCartItems] = useState(getDefaultCart());
 
-    const addToCart = (itemId) => {
-        setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1}));
+    const addToCart = (itemId) => { setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1})); }
+    const removeFromCart = (itemId) => { setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1})); }
+    const updateCartItemCount = (itemId, qty) => { setCartItems((prev) => ({...prev, [itemId]: qty})); }
+
+    const getCartItemCount = () => Object.values(cartItems).filter(item => item !== 0).length
+    const getTotalCartAmount = () => {
+
+        let totalAmount = 0;
+
+        for (const item in cartItems){
+
+            if(cartItems[item] > 0){
+
+                let product = data.find(product=>product.id == Number(item));
+                console.log('log: ', product)
+                totalAmount += cartItems[item] * product.productPrice;
+            }
+        }
+
+        return totalAmount;
     }
 
-    const contextValue = {cartItems, addToCart}
+
+
+
+    const contextValue = {
+        cartItems,
+        addToCart,
+        removeFromCart,
+        updateCartItemCount,
+
+        getCartItemCount,
+        getTotalCartAmount
+    }
 
     console.log(cartItems)
     return (

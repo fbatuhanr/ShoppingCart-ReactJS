@@ -9,27 +9,27 @@ export const data = [
         productImage: product1,
         productName: "Macbook Pro",
         productDescription: "M2 chip & 13-inch",
-        ProductPrice: 1299
+        productPrice: 1299
     },
     {
         id: 2,
         productImage: product2,
         productName: "Memory Foam Mattress",
         productDescription: "Special mattress",
-        ProductPrice: 348.5
+        productPrice: 348.5
     },
     {
         id: 3,
         productImage: product3,
         productName: "Daily Repair Face Gel Cream for Dry Skin",
         productDescription: "Face gel",
-        ProductPrice: 29.5
+        productPrice: 29.5
     },
     {
         id: 4,
         productImage: product4,
         productName: "Workout Dumbbell",
         productDescription: "Colorful",
-        ProductPrice: 99.9
+        productPrice: 99.9
     },
 ]
