@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 
 import {Col} from "react-bootstrap";
 
-import {data} from '../../data';
+import {products} from '../../DATA/products';
 import CartItem from "./cart-item";
 import {ShopContext} from "../../context/shop-context";
 
@@ -35,11 +35,11 @@ const Cart = () => {
                                     <div className="card-body">
                                         {
                                             cartItemCount > 0 ?
-                                                data.map((product, i) => {
+                                                products.map((product, i) => {
                                                     if(cartItems[product.id] !== 0) {
                                                         return  <>
                                                             <CartItem data={product} />
-                                                            {data.length !== i+1 && <hr className="my-4"/>}
+                                                            {products.length !== i+1 && <hr className="my-4"/>}
                                                         </>
                                                     }
                                                 }) :
