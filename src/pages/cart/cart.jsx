@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 
 import {Col} from "react-bootstrap";
 
-import {products} from '../../DATA/products';
+import {products} from '../../DATA/data';
 import CartItem from "./cart-item";
 import {ShopContext} from "../../context/shop-context";
 

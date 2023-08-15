@@ -9,18 +9,14 @@ const Shop = () => {
 
     const [activeCategory, setActiveCategory] = useState(null);
 
-    const handleClick = (newValue) => {
-        setActiveCategory(newValue)
-
-        alert(newValue)
-    }
+    const handleClick = (newValue) => { setActiveCategory(newValue) }
 
     return (
         <>
         <Slider />
         <Container className="pt-3">
             <Categories activeCategory={activeCategory} onClick={handleClick}/>
-            <Products />
+            <Products selectedCategory={activeCategory} />
         </Container>
         </>
     );
