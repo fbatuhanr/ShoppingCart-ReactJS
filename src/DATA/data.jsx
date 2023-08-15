@@ -42,7 +42,7 @@ export const products = [
         productCategory: categories.Fashion
     },
     {
-        id: 2,
+        id: 4,
         productImage: product4,
         productName: "Women's Ankle Booties",
         productDescription: "GLBALWN Fashion Combat Boots",
@@ -50,7 +50,7 @@ export const products = [
         productCategory: categories.Fashion
     },
     {
-        id: 2,
+        id: 5,
         productImage: product5,
         productName: "SDYABLO Crossbody Backpack",
         productDescription: "Small Black Sling Crossbody Backpack Shoulder Bag for Men Women Vintage PU Leather Sling Backpack Cycling",
@@ -58,7 +58,7 @@ export const products = [
         productCategory: categories.Bags
     },
     {
-        id: 2,
+        id: 6,
         productImage: product6,
         productName: "COH Women's Crossbody Bag",
         productDescription: "Mini Rowan File Shoulder Crossbody Bag",
@@ -66,7 +66,7 @@ export const products = [
         productCategory: categories.Bags
     },
     {
-        id: 2,
+        id: 7,
         productImage: product7,
         productName: "KLIYDI Polarized Sunglasses",
         productDescription: "Polarized Sunglasses for Men and Women Semi-Rimless Frame Driving Sun glasses UV Blocking",
@@ -74,7 +74,7 @@ export const products = [
         productCategory: categories.Sunglasses
     },
     {
-        id: 2,
+        id: 8,
         productImage: product8,
         productName: "SJS Sunglasses for Women & Men",
         productDescription: "Sunglasses for Women & Men, Retro, Polycarbonate Lens, Trendy Aviator",
