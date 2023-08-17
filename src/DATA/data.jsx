@@ -38,7 +38,7 @@ export const products = [
         productImage: product3,
         productName: "BN NEVS Mens Watches",
         productDescription: "Minimalist Fashion Wrist Watch for Men",
-        productPrice: 349.99,
+        productPrice: 149.99,
         productCategory: categories.Fashion
     },
     {
@@ -46,7 +46,7 @@ export const products = [
         productImage: product4,
         productName: "Women's Ankle Booties",
         productDescription: "GLBALWN Fashion Combat Boots",
-        productPrice: 1299,
+        productPrice: 89.99,
         productCategory: categories.Fashion
     },
     {

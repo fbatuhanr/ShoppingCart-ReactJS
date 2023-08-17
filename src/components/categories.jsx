@@ -1,25 +1,20 @@
 import React, {useState} from 'react';
-import {Button, Col, Navbar, Row} from "react-bootstrap";
-import {MdLaptopMac, MdSportsMartialArts} from "react-icons/md";
-import {BiHome} from "react-icons/bi";
-import {GiHealthPotion} from "react-icons/gi";
+import {Button, Col, Row} from "react-bootstrap";
 
-import {categories} from "../DATA/data";
+import {categories, products} from "../DATA/data";
 
 const Categories = (props) => {
 
     const [active, setActive] = useState(null);
 
+    const handleCategoryClick = (category) => {
 
-    const handleClick = (value) => {
-
-        props.onClick(props.activeCategory !== value ? value : null);
-
-        setActive(active !== value ? value : null);
+        props.handleCategoryClick(props.activeCategory !== category ? category : null);
+        setActive(active !== category ? category : null);
     }
 
     return (
-        <div className="mt-4 mb-4">
+        <Row className="mt-4">
             <Row>
                 <Col>
                     <h4 className="text-center">SHOP BY CATEGORY</h4>
@@ -30,10 +25,11 @@ const Categories = (props) => {
                     <Row>
                         <Col xs={6} md={3}>
                             <Button
+                                ref = {ref => props.categoryRef.current[Object.keys(categories)[categories.Electronics]] = ref}
                                 type="button"
                                 variant="default"
                                 className={active === categories.Electronics ? "active" : undefined}
-                                onClick={() => handleClick(categories.Electronics)}
+                                onClick={() => handleCategoryClick(categories.Electronics)}
                             >
                                 <figure className="mb-2">
                                     <img src="https://raw.githubusercontent.com/fbatuhanr/ShoppingCart-ReactJS/f95180afe5932e3da9aa1cdfe0c2dc64f9384794/src/assets/categories/electronics.jpeg" alt="category"
@@ -42,16 +38,17 @@ const Categories = (props) => {
                                 </figure>
                                 <div className="p-1">
                                     <h5 className="mb-1 text-uppercase">Electronics</h5>
-                                    <span className="fs-6 fw-light">8 products</span>
+                                    <span className="fs-6 fw-light">{products.filter(item=>item.productCategory === categories.Electronics).length} products</span>
                                 </div>
                             </Button>
                         </Col>
                         <Col xs={6} md={3}>
                             <Button
+                                ref = {ref => props.categoryRef.current[Object.keys(categories)[categories.Fashion]] = ref}
                                 type="button"
                                 variant="default"
                                 className={active === categories.Fashion ? "active" : undefined}
-                                onClick={() => handleClick(categories.Fashion)}
+                                onClick={() => handleCategoryClick(categories.Fashion)}
                             >
                                 <figure className="mb-2">
                                     <img src="https://raw.githubusercontent.com/fbatuhanr/ShoppingCart-ReactJS/f95180afe5932e3da9aa1cdfe0c2dc64f9384794/src/assets/categories/fashion.jpeg" alt="category"
@@ -60,16 +57,17 @@ const Categories = (props) => {
                                 </figure>
                                 <div className="p-1">
                                     <h5 className="mb-1 text-uppercase">Fashion</h5>
-                                    <span className="fs-6 fw-light">8 products</span>
+                                    <span className="fs-6 fw-light">{products.filter(item=>item.productCategory === categories.Fashion).length} products</span>
                                 </div>
                             </Button>
                         </Col>
                         <Col xs={6} md={3}>
                             <Button
+                                ref = {ref => props.categoryRef.current[Object.keys(categories)[categories.Bags]] = ref}
                                 type="button"
                                 variant="default"
                                 className={active === categories.Bags ? "active" : undefined}
-                                onClick={() => handleClick(categories.Bags)}
+                                onClick={() => handleCategoryClick(categories.Bags)}
                             >
                                 <figure className="mb-2">
                                     <img src="https://raw.githubusercontent.com/fbatuhanr/ShoppingCart-ReactJS/f95180afe5932e3da9aa1cdfe0c2dc64f9384794/src/assets/categories/bags.jpeg" alt="category"
@@ -78,16 +76,17 @@ const Categories = (props) => {
                                 </figure>
                                 <div className="p-1">
                                     <h5 className="mb-1 text-uppercase">Bags</h5>
-                                    <span className="fs-6 fw-light">8 products</span>
+                                    <span className="fs-6 fw-light">{products.filter(item=>item.productCategory === categories.Bags).length} products</span>
                                 </div>
                             </Button>
                         </Col>
                         <Col xs={6} md={3}>
                             <Button
+                                ref = {ref => props.categoryRef.current[Object.keys(categories)[categories.Sunglasses]] = ref}
                                 type="button"
                                 variant="default"
                                 className={active === categories.Sunglasses ? "active" : undefined}
-                                onClick={() => handleClick(categories.Sunglasses)}
+                                onClick={() => handleCategoryClick(categories.Sunglasses)}
                             >
                                 <figure className="mb-2">
                                     <img src="https://raw.githubusercontent.com/fbatuhanr/ShoppingCart-ReactJS/f95180afe5932e3da9aa1cdfe0c2dc64f9384794/src/assets/categories/sunglasses.jpeg" alt="category"
@@ -96,14 +95,14 @@ const Categories = (props) => {
                                 </figure>
                                 <div className="p-1">
                                     <h5 className="mb-1 text-uppercase">Sunglasses</h5>
-                                    <span className="fs-6 fw-light">8 products</span>
+                                    <span className="fs-6 fw-light">{products.filter(item=>item.productCategory === categories.Sunglasses).length} products</span>
                                 </div>
                             </Button>
                         </Col>
                     </Row>
                 </Col>
             </Row>
-        </div>
+        </Row>
     );
 };
 

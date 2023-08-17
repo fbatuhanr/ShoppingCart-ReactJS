@@ -13,12 +13,22 @@ const Cart = () => {
     const cartItemCount = getCartItemCount();
     const cartTotal = getTotalCartAmount();
 
+    const shippingFee = 9.9;
+
 
     const currentDate = new Date();
     const deliveryDate = (date, dayOffset) => {
         date.setDate(date.getDate() + dayOffset);
         return date.toLocaleDateString('en-us', { weekday:"long", month:"long", day:"numeric"});
     }
+
+    function ParseFloat(str,val) {
+        str = str.toString();
+        str = str.slice(0, (str.indexOf(".")) + val + 1);
+        return Number(str);
+    }
+
+    let totalAmount = cartTotal > 99 ? cartTotal : cartTotal + 9.9
 
     return (
         <section className="h-100 gradient-custom">
@@ -83,11 +93,11 @@ const Cart = () => {
                                         <ul className="list-group list-group-flush">
                                             <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                                 Products
-                                                <span>${cartTotal}</span>
+                                                <span>${ParseFloat(cartTotal,2)}</span>
                                             </li>
                                             <li className="list-group-item d-flex justify-content-between align-items-center px-0">
-                                                Shipping
-                                                <span className="text-success">FREE</span>
+                                                <span>Shipping <i>(Free over $99)</i></span>
+                                                {cartTotal > 99 ? <span className="text-success">FREE</span> : <span className="text-warning">${shippingFee.toFixed(2)}</span>}
                                             </li>
                                             <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                                                 <div>
@@ -96,7 +106,7 @@ const Cart = () => {
                                                         <p className="mb-0">(including VAT)</p>
                                                     </strong>
                                                 </div>
-                                                <span><strong>${cartTotal}</strong></span>
+                                                <span><strong>${ParseFloat(totalAmount,2)}</strong></span>
                                             </li>
                                         </ul>
 
