@@ -14,3 +14,7 @@
 
 ### Project Video:
 
+
+
+https://github.com/fbatuhanr/ShoppingCart-ReactJS/assets/34348780/6ff023e0-1f95-4f66-a30e-a382d0fc3a4e
+
